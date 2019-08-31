@@ -1,0 +1,25 @@
+<!-- 
+  Requires parameters:
+    subnavbar : Array(Object(
+      label : string,
+      link : string,
+      active : boolean,
+    ))
+-->
+extends layout
+
+block style
+  link(rel="stylesheet" href="/static/style/admin.css")
+
+block subnavbar
+  .navbar
+    .navbar-inner
+      .container
+        ul.nav
+          each subnavitem in subnavbar
+            if subnavitem.active
+              li.active
+                a(href=subnavitem.link)= subnavitem.label
+            else 
+              li
+                a(href=subnavitem.link)= subnavitem.label

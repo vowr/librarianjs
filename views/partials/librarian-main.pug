@@ -1,0 +1,14 @@
+extends vowr-main
+
+block navbar
+  .navbar-fixed-top.topnav
+    if navbarleft
+      each navitem in navbarleft
+          a(class={active: uri === navitem.link} href=navitem.link)= navitem.label
+      if navbarright
+        .right  
+          each navitem in navbarright
+              a(class={active: uri === navitem.link} href=navitem.link)= navitem.label
+
+block content-container
+  block content
