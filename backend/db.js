@@ -1,4 +1,6 @@
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
 const Sequelize = require('sequelize');
 const connInfo = require('../config');
 
@@ -8,112 +10,70 @@ let sequelize = new Sequelize(
   connInfo.dbPasswd,
   {
     host: connInfo.dbServer,
-    dialect: 'mysql',
+    dialect: connInfo.dialect,
     port: connInfo.dbServerPort,
     protocol: connInfo.dbServerProtocol,
   },
 );
 
-const User = sequelize.define('users', {
-  id: {
-    type: Sequelize.INTEGER,
-    unique: true,
-    allowNull: false,
-    primaryKey: true,
-  },
-  username: {
-    type: Sequelize.STRING,
-    unique: true,
-    allowNull: false,
-  },
-  passwordHash: {
-    type: Sequelize.STRING,
-    /**
-     * It wouldn't hurt to enforce uniqueness here. Unique salts should
-     * make the hashes unique even if two passwords are the same.In the
-     * event that a salt is not unique _and_ two passwords are the same,
-     * an exception should be raised and another salt generated until
-     * the uniqueness constraint is satisfied.
-     */
-    unique: true,
-    allowNull: true,
-    default: null,
-    get() {
-      return () => this.getDataValue('password_hash');
-    },
-    field: 'password_hash',
-  },
-  passwordSalt: {
-    type: Sequelize.STRING,
-    unique: true,
-    allowNull: true,
-    default: null,
-    get() {
-      return () => this.getDataValue('password_salt');
-    },
-    field: 'password_salt',
-  },
-  admin: {
-    type: Sequelize.BOOLEAN,
-    allowNull: false,
-    default: false,
-  },
-  master: {
-    type: Sequelize.BOOLEAN,
-    allowNull: false,
-    default: false,
-  },
-  active: {
-    type: Sequelize.BOOLEAN,
-    allowNull: false,
-    default: true,
-  },
-  lockoutCount: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    default: 0,
-    field: 'lockout_count',
-  },
-  securityQuestion: {
-    type: Sequelize.STRING,
-    allowNull: true,
-    default: null,
-    field: 'security_question',
-  },
-  securityAnswer: {
-    type: Sequelize.STRING,
-    allowNull: true,
-    default: null,
-    field: 'security_answer',
-  },
-});
+module.exports._sequelize = sequelize;
+module.exports._Sequelize = Sequelize;
 
-User.generateSalt = () => {
-  return crypto.randomBytes(16).toString('base64');
-};
+module.exports.models = {};
 
-User.encryptPassword = (plainText, salt) =>
-  crypto
-    .createHash('RSA-SHA256')
-    .update(plainText)
-    .update(salt)
-    .digest('hex');
+fs.readdir(`${__dirname}/models`, (err, res) => {
+  if (!err) {
+    res
+      .filter((element) => element.endsWith('.js'))
+      .forEach((element) => {
+        const elemBasename = element.replace(/\.js$/, '');
+        console.log(
+          `Adding model ${elemBasename} from ${__dirname}/models/${element}...`,
+        );
+        module.exports.models[
+          elemBasename
+        ] = require(`${__dirname}/models/${elemBasename}`)(
+          sequelize,
+          Sequelize,
+        );
 
-const setSaltAndPassword = (user) => {
-  if (user.changed('password_hash')) {
-    user.passwordSalt = User.generateSalt();
-    user.passwordHash = User.encryptPassword(
-      user.passwordHash(),
-      user.passwordSalt(),
-    );
+        // module.exports.models.user.generateSalt = () => {
+        //   return crypto.randomBytes(16).toString('base64');
+        // };
+
+        // module.exports.models.user.encryptPassword = (plainText, salt) =>
+        //   crypto
+        //     .createHash('RSA-SHA256')
+        //     .update(plainText)
+        //     .update(salt)
+        //     .digest('hex');
+
+        // const setSaltAndPassword = (user) => {
+        //   if (user.changed('password_hash')) {
+        //     user.passwordSalt = module.exports.models.user.generateSalt();
+        //     user.passwordHash = module.exports.models.user.encryptPassword(
+        //       user.passwordHash(),
+        //       user.passwordSalt(),
+        //     );
+        //   }
+        // };
+        // module.exports.models.user.beforeCreate(setSaltAndPassword);
+        // module.exports.models.user.beforeUpdate(setSaltAndPassword);
+
+        // module.exports.models.user.prototype.validatePassword = (
+        //   enteredPassword,
+        // ) =>
+        //   module.exports.models.user.encryptPassword(
+        //     enteredPassword,
+        //     this.passwordSalt(),
+        //   ) === this.passwordHash();
+      });
+  } else {
+    console.log('Error adding models!');
+    console.log(err);
+    process.exit(1);
   }
-};
-User.beforeCreate(setSaltAndPassword);
-User.beforeUpdate(setSaltAndPassword);
-
-User.prototype.validatePassword = (enteredPassword) =>
-  User.encryptPassword(enteredPassword, this.passwordSalt()) ===
-  this.passwordHash();
+});
 
 module.exports.sync = (success) => {
   sequelize.sync().then(success);

@@ -1,31 +1,31 @@
-/**
- * TODO
- *
- * Create foreign key reference between `userID' here
- * and `id' in user.js.
- */
 module.exports = (sequelize, DataTypes) => {
-  const Login = sequelize.define('user_logins', {
+  const Message = sequelize.define('artists', {
     id: {
       type: DataTypes.INTEGER,
       unique: true,
       allowNull: false,
       primaryKey: true,
     },
-    userID: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      field: 'user_id',
-    },
-    remoteIPAddress: {
+    table: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: 'remote_ip_address',
+    },
+    entityID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    message: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    authorID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     timestamp: {
       type: DataTypes.DATE,
       allowNull: false,
     },
   });
-  return Login;
+  return Message;
 };
