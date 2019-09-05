@@ -1,0 +1,639 @@
+extends ../partials/website-main
+
+block style
+  link(rel="stylesheet", href="/css/calendar.css")
+
+block content
+  .container.blur-box
+    .row
+      .col
+        h1 Broadcast Schedule
+        ul.children.children-card
+          span.card
+            table.calendar
+              thead
+                tr
+                  th SUNDAY
+                  th MONDAY
+                  th TUESDAY
+                  th WEDNESDAY
+                  th THURSDAY
+                  th FRIDAY
+                  th SATURDAY
+              tbody
+                tr
+                  td(rowspan='4')
+                    .show.memory-lane 12:00&nbsp;AM
+                  td(rowspan='4')
+                    .show.memory-lane 12:00&nbsp;AM
+                  td(rowspan='4')
+                    .show.memory-lane 12:00&nbsp;AM
+                  td(rowspan='9')
+                    .show.country-late 12:00&nbsp;AM
+                  td(rowspan='4')
+                    .show.celtic-memories 12:00&nbsp;AM
+                  td(rowspan='4')
+                    .show.memory-lane 12:00&nbsp;AM
+                  td(rowspan='4')
+                    .show.memory-lane 12:00&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                  td(rowspan='5')
+                    .show.music-for-dreams 1:00&nbsp;AM
+                  td(rowspan='5')
+                    .show.music-for-dreams 1:00&nbsp;AM
+                  td(rowspan='5')
+                    .show.music-for-dreams 1:00&nbsp;AM
+                  td(rowspan='5')
+                    .show.music-for-dreams 1:00&nbsp;AM
+                  td(rowspan='5')
+                    .show.music-for-dreams 1:00&nbsp;AM
+                  td(rowspan='5')
+                    .show.music-for-dreams 1:00&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                tr
+                  td(rowspan='4')
+                    .show.guest 2:05&nbsp;AM
+                  td(rowspan='4')
+                    .show.guest 2:05&nbsp;AM
+                  td(rowspan='4')
+                    .show.guest 2:05&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-for-dreams 2:05&nbsp;AM
+                  td(rowspan='4')
+                    .show.guest 2:05&nbsp;AM
+                  td(rowspan='4')
+                    .show.guest 2:05&nbsp;AM
+                  td(rowspan='4')
+                    .show.guest 2:05&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                  td(rowspan='4')
+                    .show.music-in-the-night 3:15&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-in-the-night 3:15&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-in-the-night 3:15&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-in-the-night 3:15&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-in-the-night 3:15&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-in-the-night 3:15&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-in-the-night 3:15&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                  td(rowspan='5')
+                    .show.easy-listening 4:15&nbsp;AM
+                  td(rowspan='5')
+                    .show.easy-listening 4:15&nbsp;AM
+                  td(rowspan='5')
+                    .show.easy-listening 4:15&nbsp;AM
+                  td(rowspan='5')
+                    .show.easy-listening 4:15&nbsp;AM
+                  td(rowspan='5')
+                    .show.easy-listening 4:15&nbsp;AM
+                  td(rowspan='5')
+                    .show.easy-listening 4:15&nbsp;AM
+                  td(rowspan='5')
+                    .show.easy-listening 4:15&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                tr
+                  td(rowspan='4')
+                    .show.music-to-remember 5:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-to-remember 5:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-to-remember 5:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-to-remember 5:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-to-remember 5:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-to-remember 5:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.music-to-remember 5:20&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                  td(rowspan='8')
+                    .show.morning-melodies 6:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.morning-melodies 6:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.morning-melodies 6:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.morning-melodies 6:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.morning-melodies 6:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.morning-melodies 6:20&nbsp;AM
+                  td(rowspan='4')
+                    .show.morning-melodies 6:20&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                  td(rowspan='6')
+                    .show.breakfast-at-800 7:30&nbsp;AM
+                  td(rowspan='6')
+                    .show.breakfast-at-800 7:30&nbsp;AM
+                  td(rowspan='6')
+                    .show.breakfast-at-800 7:30&nbsp;AM
+                  td(rowspan='6')
+                    .show.breakfast-at-800 7:30&nbsp;AM
+                  td(rowspan='6')
+                    .show.breakfast-at-800 7:30&nbsp;AM
+                  td(rowspan='6')
+                    .show.celtic-breakfast 7:30&nbsp;AM
+                tr
+                tr
+                tr
+                tr
+                  td
+                    .show.musical-interlude 8:30&nbsp;AM
+                tr
+                  td
+                    .show.captains-call 8:45&nbsp;AM
+                tr
+                  td(rowspan='4')
+                    .show.sunday-chapel 9:00&nbsp;AM
+                  td
+                    .show.meditation 9:00&nbsp;AM
+                  td
+                    .show.meditation 9:00&nbsp;AM
+                  td
+                    .show.meditation 9:00&nbsp;AM
+                  td
+                    .show.meditation 9:00&nbsp;AM
+                  td
+                    .show.meditation 9:00&nbsp;AM
+                tr
+                  td(rowspan='15')
+                    | Music Unlimited No. 1
+                    br
+                    | 9:05&nbsp;AM
+                  td(rowspan='7')
+                    | Music Unlimited No. 1
+                    br
+                    | 9:05&nbsp;AM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='2')
+                    a(href='http://www.day1.org/') Day 1
+                    br
+                    | 10:00&nbsp;AM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='2')
+                    | Hymns for Devotion
+                    br
+                    | 10:30&nbsp;AM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='5')
+                    | Worship Service (Live)
+                    br
+                    | 11:00&nbsp;AM
+                  td(rowspan='8')
+                    | 50 Plus: The Radio Show
+                    br
+                    | 11:00&nbsp;AM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Your Health
+                    br
+                    | 12:15 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Melody Time
+                    br
+                    | 12:30 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Death Announcements
+                    br
+                    | 12:58 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='2')
+                    | Words & Music
+                    br
+                    | 1:00 PM
+                  td(rowspan='4')
+                    | Lunch Break
+                    br
+                    | 1:00 PM
+                  td(rowspan='4')
+                    | Lunch Break
+                    br
+                    | 1:00 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Donation Acknowledgements
+                    br
+                    | 1:30 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Sunday Chorale
+                    br
+                    | 1:35 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='2')
+                    | Guest Interview
+                    br
+                    | 2:00 PM
+                  td(rowspan='8')
+                    | Music Unlimited No. 2
+                    br
+                    | 2:00 PM
+                  td(rowspan='8')
+                    | Music Unlimited No. 2
+                    br
+                    | 2:00 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='14')
+                    | VOWR Variety
+                    br
+                    | 2:30 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='13')
+                    | (Easy Listening)
+                    br
+                    | 4:00 PM
+                  td(rowspan='6')
+                    | Country Light & Easy
+                    br
+                    | 4:00 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='7')
+                    | (Easy Listening)
+                    br
+                    | 5:30 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='4')
+                    | Sunday Melodies
+                    br
+                    | 6:00 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='4')
+                    | Worship Service (Recorded)
+                    br
+                    | 7:00 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Death Announcements
+                    br
+                    | 7:25 PM
+                  td
+                    | Death Announcements
+                    br
+                    | 7:25 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Your Health (repeat from Sunday)
+                    br
+                    | 7:30 PM
+                  td(rowspan='2')
+                    a(href='https://www.lutheranhour.org/') The Lutheran Hour
+                    br
+                    | 7:30 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    a(href='http://salvationarmysoundcast.org/wonderful-words-of-life/') Salvation Army: Wonderful Words of Life
+                    br
+                    | 7:45 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                    | Death Announcements
+                    br
+                    | 8:00 PM
+                  td(rowspan='8')
+                    | Evenings at 800
+                    br
+                    | 8:00 PM
+                  td(rowspan='8')
+                    | Evenings at 800
+                    br
+                    | 8:00 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='7')
+                    | Hymns at Eventide
+                    br
+                    | 8:05 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td(rowspan='8')
+                    | Music for Relaxation
+                    br
+                    | 10:00 PM
+                  td(rowspan='8')
+                    | Music for Relaxation
+                    br
+                    | 10:00 PM
+                  td(rowspan='8')
+                    | Music for Relaxation
+                    br
+                    | 10:00 PM
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+                tr
+                  td
+                  td
+                  td
+                  td
+
+
+    .row
+      .col
+        h1 Worship Schedule
+
+        p
+          | VOWR's radio ministry finds life in the broadcasting of
+          | Sunday worship services from churches, of all denominations,
+          | in the St. John's and surrounding area. The majority of our
+          | worship services are broadcast from
+          |
+          a(href='http://wesleychurch.ca/') Wesley United Church
+          | , with whom we are directly affiliated. Other churches in the
+          | area are invited to have their services broadcast, either
+          | live or pre-recorded by contacting our station manager at
+          |
+          code
+            a(href='mailto:manager@vowr.org') manager@vowr.org
+          | .
