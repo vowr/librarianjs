@@ -38,19 +38,19 @@ router.get('/schedule', function(req, res, next) {
 /* GET programs page. */
 router.get('/programs', function(req, res, next) {
   res.locals.title = 'Programs';
-  res.render('siteIndex', res.locals);
+  res.render('vowr/programs', res.locals);
 });
 
 /* GET sponsors page. */
 router.get('/sponsors', function(req, res, next) {
   res.locals.title = 'Sponsors';
-  res.render('siteIndex', res.locals);
+  res.render('vowr/sponsors', res.locals);
 });
 
 /* GET donations page. */
 router.get('/donations', function(req, res, next) {
   res.locals.title = 'Donations';
-  res.render('siteIndex', res.locals);
+  res.render('vowr/donations', res.locals);
 });
 
 module.exports = router;

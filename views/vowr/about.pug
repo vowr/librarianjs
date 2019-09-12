@@ -1,40 +1,35 @@
-extends ../partials/website-main
+extends ../partials/website-main-sidebar
 
 block content
-  .container.blur-box
-    .row
-      .col
-        h1= title
-    .row
-      .col
-        p
-          | VOWR broadcasts from studios located in Wesley United
-          | Church in St.&nbsp;John's, NL. The station's first broadcast
-          | occurred on July&nbsp;24,&nbsp;1924, when Newfoundland was a country
-          | onto itself and some 25 years before confederation with
-          | Canada when it became Canada's tenth province.
+  .col
+    p
+      | VOWR broadcasts from studios located in Wesley United
+      | Church in St.&nbsp;John's, NL. The station's first broadcast
+      | occurred on July&nbsp;24,&nbsp;1924, when Newfoundland was a country
+      | onto itself and some 25 years before confederation with
+      | Canada when it became Canada's tenth province.
 
-        p
-          | The founder of VOWR was the Reverend Dr. J.G. Joyce,
-          | Minister at Wesley United Church (then Wesley Methodist
-          | Church) from 1922 until 1930. Reverend Joyce was a native
-          | Newfoundlander, born in Carbonear, Newfoundland in 1889.
+    p
+      | The founder of VOWR was the Reverend Dr. J.G. Joyce,
+      | Minister at Wesley United Church (then Wesley Methodist
+      | Church) from 1922 until 1930. Reverend Joyce was a native
+      | Newfoundlander, born in Carbonear, Newfoundland in 1889.
 
-        p
-          | The station had its inaugural broadcast in July&nbsp;1924,
-          | just 23&nbsp;years after Marconi received the first wireless
-          | signal at historic Signal Hill located adjacent to the mouth
-          | of St. John's Harbour.
+    p
+      | The station had its inaugural broadcast in July&nbsp;1924,
+      | just 23&nbsp;years after Marconi received the first wireless
+      | signal at historic Signal Hill located adjacent to the mouth
+      | of St. John's Harbour.
 
-        h5.sect-header Further Reading
+    h5.bf.em.no-margin.pt-5.pb-2 Further Reading
 
-        p
-          a(href='/pdf/history.pdf') The History of VOWR
+    p.no-margin
+      a.ul(href='/pdf/history.pdf') The History of VOWR
 
-        p
-          a(href='/pdf/joyce.pdf') An account of the life of Rev.&nbsp;Dr.&nbsp;J.&nbsp;G.&nbsp;Joyce
+    p.no-margin
+      a.ul(href='/pdf/joyce.pdf') An account of the life of Rev.&nbsp;Dr.&nbsp;J.&nbsp;G.&nbsp;Joyce
 
 
-      .col.col-lg-3
-        .centered
-          img(src='/images/joyce.gif' width='100%')
+  .col.col-lg-3
+    .centered
+      img(src='/images/joyce.gif' width='100%')
