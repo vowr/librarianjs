@@ -8,7 +8,7 @@
  * and commit message IDs
  */
 module.exports = (sequelize, DataTypes) => {
-  const Song = sequelize.define('songs', {
+  const Song = sequelize.define('lib_songs', {
     id: {
       type: DataTypes.INTEGER,
       unique: true,

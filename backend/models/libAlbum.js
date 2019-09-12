@@ -7,7 +7,7 @@
  * and `artists.id'.
  */
 module.exports = (sequelize, DataTypes) => {
-  const Album = sequelize.define('albums', {
+  const Album = sequelize.define('lib_albums', {
     id: {
       type: DataTypes.INTEGER,
       unique: true,

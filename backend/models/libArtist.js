@@ -4,7 +4,7 @@
  * Enable FULLTEXT searching on `name'.
  */
 module.exports = (sequelize, DataTypes) => {
-  const Playlist = sequelize.define('artists', {
+  const Artist = sequelize.define('lib_artists', {
     id: {
       type: DataTypes.INTEGER,
       unique: true,
@@ -17,5 +17,5 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  return Playlist;
+  return Artist;
 };

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Message = sequelize.define('artists', {
+  const Message = sequelize.define('lib_commits', {
     id: {
       type: DataTypes.INTEGER,
       unique: true,

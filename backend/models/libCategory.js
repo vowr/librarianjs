@@ -4,7 +4,7 @@
  * Enable FULLTEXT searching on `name'.
  */
 module.exports = (sequelize, DataTypes) => {
-  const Category = sequelize.define('categories', {
+  const Category = sequelize.define('lib_categories', {
     id: {
       type: DataTypes.INTEGER,
       unique: true,

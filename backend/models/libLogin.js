@@ -5,7 +5,7 @@
  * and `id' in user.js.
  */
 module.exports = (sequelize, DataTypes) => {
-  const Login = sequelize.define('user_logins', {
+  const Login = sequelize.define('lib_user_logins', {
     id: {
       type: DataTypes.INTEGER,
       unique: true,
