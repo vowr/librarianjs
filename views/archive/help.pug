@@ -1,0 +1,60 @@
+extends ../partials/archive-main-sidebar
+
+block style
+  link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css")
+
+block scripts
+  script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js")
+  script
+    | hljs.initHighlightingOnLoad();
+
+block content
+  .col
+    p.no-margin
+      | Listening to programs from the VOWR Digital Archive may be done in 
+      | two ways: (i) through your web browser, or (ii) by downloading the 
+      | audio file to your computer and playing it using software such as 
+      | VLC Media Player or MPlayer. We recommend the former for most 
+      | users. Downloading the media files is useful for listeners who wish
+      | to enjoy the programs over and over, or listen offline without an 
+      | Internet connection.
+
+    h4.no-margin.pt-5.pb-2 Streaming via the Web Interface
+
+    p.no-margin
+      | Lorem ipsum dolor sit amet.
+
+    h4.no-margin.pt-5.pb-2 Downloading for Offline Enjoyment
+
+    p.no-margin
+      | Lorem ipsum dolor sit amet.
+
+    h4.no-margin.pt-5.pb-2 Streaming without a GUI (Advanced)
+
+    p.no-margin
+      | Users who wish to listen to VOWR while doing other work on their
+      | computer may enjoy this listening option which forgoes the 
+      | browser session (
+      span.em i.e., 
+      | the graphical user interface) in favor of a text-based command-line
+      | application to stream and play audio from the Internet.
+
+    p.no-margin.pt-2
+      | To listen via the command line, clone the 
+      code vowr/stream 
+      a(href="https://github.com/vowr/stream" target="_blank").ul 
+        | repository on GitHub
+      | . Then, you can either run the 
+      code vowrstream 
+      | script from the cloned repository, or install it to your 
+      | path (installation defaults to 
+      code /usr/local/bin
+      | ) using 
+      code make(1)
+      | :
+
+    pre.no-margin
+      code.bash
+        | » sudo make install                      # To install to /usr/local/bin/vowrstream
+        | » sudo make PREFIX=$HOME install         # To install to ~/bin/vowrstream
+      
