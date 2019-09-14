@@ -18,37 +18,37 @@ router.use((_req, res, next) => {
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.locals.title = 'Home';
+router.get('/', (req, res, next) => {
+  res.locals.title = 'Celebrating 95 Years';
   res.render('vowr/index', res.locals);
 });
 
 /* GET about page. */
-router.get('/about', function(req, res, next) {
+router.get('/about', (req, res, next) => {
   res.locals.title = 'About VOWR';
   res.render('vowr/about', res.locals);
 });
 
 /* GET schedules page. */
-router.get('/schedule', function(req, res, next) {
+router.get('/schedule', (req, res, next) => {
   res.locals.title = 'Schedules';
   res.render('vowr/schedule', res.locals);
 });
 
 /* GET programs page. */
-router.get('/programs', function(req, res, next) {
+router.get('/programs', (req, res, next) => {
   res.locals.title = 'Programs';
   res.render('vowr/programs', res.locals);
 });
 
 /* GET sponsors page. */
-router.get('/sponsors', function(req, res, next) {
+router.get('/sponsors', (req, res, next) => {
   res.locals.title = 'Sponsors';
   res.render('vowr/sponsors', res.locals);
 });
 
 /* GET donations page. */
-router.get('/donations', function(req, res, next) {
+router.get('/donations', (req, res, next) => {
   res.locals.title = 'Donations';
   res.render('vowr/donations', res.locals);
 });

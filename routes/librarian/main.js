@@ -25,7 +25,7 @@ router.use((req, res, next) => {
 });
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
   res.locals.title = 'Home';
   res.render('siteIndex', res.locals);
 });
