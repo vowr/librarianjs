@@ -8,7 +8,8 @@ const helmet = require('helmet');
 const auth = require('./backend/auth');
 const websiteRouter = require('./routes/website/main'),
   librarianRouter = require('./routes/librarian/main'),
-  archiveRouter = require('./routes/archive/main');
+  archiveRouter = require('./routes/archive/main'),
+  apiRouter = require('./routes/api/main');
 
 const app = express();
 
@@ -41,9 +42,13 @@ app.use(minify());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
+app.use('/favicon.ico', (_req, res) => {
+  res.redirect('/images/favicon.ico');
+});
 app.use('/vowr', websiteRouter);
 app.use('/librarian', librarianRouter);
 app.use('/archive', archiveRouter);
+app.use('/api', apiRouter);
 app.use('/', (_req, res) => {
   res.redirect('/vowr');
 });
